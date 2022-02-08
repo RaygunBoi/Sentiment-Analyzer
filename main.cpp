@@ -7,6 +7,7 @@
 // Author: Max Benson
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <sstream>
 #include <chrono>
 #include <cassert>
@@ -103,7 +104,29 @@ int main() {
 //          - the file could not be opened
 //          - the database capacity isn't  large enough to fit all words in the review file
 bool BuildDatabase(const string& fileName, int capacity, Record records[], int& size) {
-    assert(false);
+    ifstream inFS;
+
+    InitDatabase(capacity, records, size);
+
+    inFS.open(fileName);
+    if (!inFS.is_open()) {
+        cout << "ERROR: " << fileName << " could not be opened." << endl;
+        return false;
+    }
+    else {
+        string review;
+        while (getline(inFS, review)) {
+            istringstream iss(review);
+            string word;
+            int score = 0;
+            iss >> score;
+            while (iss >> word) {
+                AddWordToDatabase(capacity, records, size, word, score);
+            }
+        }
+        inFS.close();
+        return true;
+    }
 }
 
 // Splits the review text into words and averages the scores of all the words that are found
@@ -114,5 +137,16 @@ bool BuildDatabase(const string& fileName, int capacity, Record records[], int& 
 // Returns:
 //      true indicates database successfully built, false indicates a problem
 double AnalyzeReview(const Record records[], int size, const string& review) {
-    assert(false);
+    double total = 0.0;
+    double wordTotal = 0.0;
+    string word;
+    int occurrences;
+    double averageScore;
+    stringstream ss(review);
+    while (ss >> word) {
+        FindWordInDatabase(records, size, word, occurrences, averageScore);
+        wordTotal++;
+        total += averageScore;
+    }
+    return total / wordTotal;
 }
