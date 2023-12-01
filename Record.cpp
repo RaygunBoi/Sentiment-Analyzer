@@ -1,10 +1,3 @@
-// Title: Lab 2 - Record.cpp
-//
-// Purpose: Implementations of the functions that are declared in Record.h.
-//
-// Class: CSC 2430 Winter 2022
-// Author: Reagan Gunawan
-
 #include "Record.h"
 
 // Getter for _word member of Record class

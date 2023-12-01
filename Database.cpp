@@ -1,10 +1,3 @@
-// Title: Lab 2 - Database.cpp
-//
-// Purpose: Implementations for the functions declared in Database.h.
-//
-// Class: CSC 2430 Winter 2022
-// Author: Reagan Gunawan
-
 #include "Database.h"
 
 // This is the value used to score a word not found in the database

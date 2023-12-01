@@ -1,16 +1,5 @@
-// Title: Lab 2 - Record.h
-//
-// Purpose: Declares the Record class which stores information about one word in the database
-//
-// Class: CSC 2430 Winter 2022
-// Author: Max Benson
-
 #ifndef RECORD_H
 #define RECORD_H
-
-//
-// THIS FILE SHOULD NOT BE MODIFIED
-//
 
 #include <string>
 using std::string;

@@ -1,10 +1,3 @@
-/// Title: Lab 2 - main.cpp
-//
-// Purpose: Practice using structs and sorted arrays by implementing  a naive algorithm for performing
-// sentiment analysis on movie reviews.
-//
-// Class: CSC 2430 Winter 2022
-// Author: Max Benson
 #include <iostream>
 #include <fstream>
 #include <string>
